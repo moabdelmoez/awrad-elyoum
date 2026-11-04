@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4f008c">
+  <meta name="description" content="أوراد الاستيقاظ والصلوات والنوم، مع مواقيت الصلاة في القاهرة.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="./awrad-logo-180.png">
+  <link rel="icon" sizes="32x32" href="./awrad-logo-32.png" type="image/png">
+  <link rel="preload" href="./fonts/IBMPlexSansArabic-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./reader.css">
+  <title>بداية الهداية</title>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6c-3-2-6-2-9-1v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1zm0 0v13"/></svg></span>بداية الهداية</div>
+      <button class="type-button" type="button" data-open="reading" aria-label="خيارات القراءة" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10 3h4l.6 2.6 1.4.8 2.5-.8 2 3.5-1.9 1.8v2.2l1.9 1.8-2 3.5-2.5-.8-1.4.8L14 21h-4l-.6-2.6-1.4-.8-2.5.8-2-3.5 1.9-1.8v-2.2L3.5 9.1l2-3.5 2.5.8 1.4-.8L10 3Z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </header>
+    <div class="folio" id="folio">
+      <div>
+        <span class="folio-label" id="eyebrow">القاهرة</span>
+        <h1 id="title">أقسام اليوم</h1>
+      </div>
+      <div class="folio-time" id="folio-time" hidden>
+        <span>بداية الوقت</span>
+        <time id="prayer-time" dir="ltr"></time>
+      </div>
+    </div>
+    <nav class="jumps" aria-label="أقسام الورد" hidden>
+      <button type="button" data-phase-jump="before">قبل الصلاة</button>
+      <button type="button" data-phase-jump="after">بعد الصلاة</button>
+    </nav>
+    <main id="reader" tabindex="-1">
+      <p class="schedule-status" id="schedule-status" role="status"></p>
+      <div class="day-list" id="day-list"><!-- DAY --></div>
+      <article id="routine" hidden></article>
+    </main>
+    <nav class="bottom" aria-label="التنقل">
+      <button type="button" id="now" aria-label="الآن"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5h4"/></svg><span id="now-label">الآن</span></button>
+      <button type="button" data-open="index" id="index-button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>الفهرس</button>
+      <button type="button" id="day" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg>اليوم</button>
+    </nav>
+    <noscript>فعّل JavaScript لعرض الأوراد.</noscript>
+  </div>
+  <dialog id="index" aria-labelledby="index-title">
+    <div class="dialog-top"><h2 id="index-title">فهرس الورد</h2><form method="dialog"><button>إغلاق</button></form></div>
+    <div class="index-list" id="index-list"></div>
+  </dialog>
+  <dialog id="reading" aria-labelledby="reading-title">
+    <div class="dialog-top"><h2 id="reading-title">خيارات القراءة</h2><form method="dialog"><button>إغلاق</button></form></div>
+    <label class="setting">حجم الخط <input id="reading-size" type="range" min="20" max="34" value="23"></label>
+    <div class="setting"><span>المظهر</span><button id="night" type="button" aria-pressed="false">الوضع الليلي</button></div>
+    <p class="offline-status" id="offline-status" role="status"></p>
+  </dialog>
+  <!-- ROUTINES -->
+</body>
+</html>

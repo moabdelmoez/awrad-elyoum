@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "بداية الهداية",
+  "short_name": "بداية الهداية",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf8fc",
+  "theme_color": "#4f008c",
+  "icons": [
+    { "src": "awrad-logo-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "awrad-logo-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "awrad-logo-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
