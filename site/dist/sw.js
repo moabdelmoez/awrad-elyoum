@@ -1,5 +1,5 @@
 const PREFIX = "awrad-reader-";
-const CACHE = PREFIX + "86c164d5db24";
+const CACHE = PREFIX + "3c38034900ef";
 const ASSETS = ["index.html", "reader.css", "app.js", "schedule.js", "manifest.webmanifest", "awrad-logo-32.png", "awrad-logo-180.png", "awrad-logo-192.png", "awrad-logo-512.png", "awrad-logo-maskable-512.png", "fonts/IBMPlexSansArabic-Regular.woff2", "fonts/IBMPlexSansArabic-Medium.woff2"];
 const HOME = new URL("index.html", self.registration.scope).href;
 
